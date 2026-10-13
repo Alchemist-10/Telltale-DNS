@@ -1,0 +1,6 @@
+# One domain per line, or hosts format ("0.0.0.0 domain"). Subdomains are blocked too.
+doubleclick.net
+googleadservices.com
+0.0.0.0 ads.example.com
+malware.test
+blocked.example
