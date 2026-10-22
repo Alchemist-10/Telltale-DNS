@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """End-to-end test with a FAKE upstream (no internet needed).
-Usage: python3 tests/integration_test.py ./build/dns-filter
+Usage: python3 tests/integration_test.py ./build/telltale-dns
 """
 import os, random, signal, socket, struct, subprocess, sys, tempfile, threading, time
 
-BIN = sys.argv[1] if len(sys.argv) > 1 else "./dns-filter"
+BIN = sys.argv[1] if len(sys.argv) > 1 else "./build/telltale-dns"
 UP_PORT, P1, P2, P3, P4, P5 = 5399, 5391, 5392, 5393, 5394, 5395
 tmp = tempfile.mkdtemp()
 bl = os.path.join(tmp, "bl.txt")

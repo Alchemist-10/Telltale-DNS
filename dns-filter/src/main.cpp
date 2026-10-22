@@ -1,5 +1,5 @@
-// DNS filtering resolver
-// Usage: ./dns-filter [--port 5300] [--upstream 8.8.8.8[:53]] [--blocklist FILE]... [--threads 4]
+// Telltale-DNS: DNS filtering resolver
+// Usage: ./telltale-dns [--port 5300] [--upstream 8.8.8.8[:53]] [--blocklist FILE]... [--threads 4]
 //        [--sinkhole nxdomain|zero] [--log queries.log] [--timeout-ms 2000] [--quiet]
 //        [--no-detect] [--block-tunneling] [--entropy 3.6] [--max-unique 50] [--window-sec 60]
 //        [--allow-domain DOMAIN]...
@@ -105,7 +105,7 @@ int main(int argc, char** argv) {
     Server server(cfg, holder, cache, logger, detect ? &detector : nullptr);
     if (!server.start()) return 1;
 
-    std::printf("dns-filter: UDP %d | upstream %s:%d | %d workers | %zu blocked domains | sinkhole=%s | "
+    std::printf("Telltale-DNS: UDP %d | upstream %s:%d | %d workers | %zu blocked domains | sinkhole=%s | "
                 "detector=%s%s | log=%s\n",
                 cfg.port, cfg.upstream_ip.c_str(), cfg.upstream_port, cfg.threads, holder.get()->size(),
                 cfg.sinkhole == SinkholeMode::NxDomain ? "nxdomain" : "zero",
